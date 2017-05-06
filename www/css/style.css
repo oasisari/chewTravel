@@ -1,0 +1,58 @@
+/* Empty. Add your own CSS if you like */
+.gap-15 {
+	width: 15%;
+}
+
+.gap-50 {
+	width: 100px;
+}
+
+.font-14 {
+	font-size: 14px;
+}
+
+.font-12 {
+	font-size: 12px;
+}
+
+.bg-space {
+	/*
+	background:url("../img/space.jpg"); 
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	*/
+	background: radial-gradient(circle, #85929E, #1C2833);
+}
+
+.bg-chew {
+	background:url("../img/chew.jpg"); 
+	background-repeat: no-repeat;
+	background-position: bottom right;
+}
+
+.bg-yellow {
+	background: radial-gradient(circle, #FCF3CF, #DAA520);
+}
+
+.bar-yellow {
+	background-color: #DAA520 !important;
+	color:white;
+}
+
+.my-yellow {
+	color: #DAA520 !important;
+}
+
+.bg-transparent {
+	background-color: transparent !important;
+}
+
+ul { 
+    display: block;
+    list-style-type: disc;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 40px;
+}

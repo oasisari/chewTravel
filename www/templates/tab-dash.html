@@ -1,0 +1,27 @@
+<ion-view view-title="Chewbacca Travel Agency">
+<ion-nav-bar class="bar-dark">
+</ion-nav-bar>
+  <ion-content class="padding bg-space" delegate-handle="bottom1">
+    <div>
+      <div align="center"><h4 class="title my-yellow">Where would you like to travel?</h4></div>
+      <div class="stable">Not sure which planet to have your next holiday in? Our human-friendly bot <span class="my-yellow">Genos</span> can help you select your next destination based on your preference.</div><br>
+      <div class="stable">Type in your response and press Enter/Go</div><br>
+    </div>
+    <div>
+      <ion-list>
+        <ion-item class="item item-text-wrap bg-transparent"><span class="gap-15 stable">Genos:</span>&nbsp;<div class="my-yellow font-14">{{reply}}</div></ion-item>
+        <ion-item class="item item-text-wrap bg-transparent"><span class="gap-15 stable">You:</span>&nbsp;<label class="item item-input-wrapper row-no-padding bg-transparent"><form ng-submit="sendQ()"><input type="text" ng-model="u.question" class="bg-transparent my-yellow"></form></label>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div ng-show="showplanet"><br>
+      <ion-list>
+        <ion-item class="bg-transparent row-no-padding" ng-repeat="p in planets" type="item-text-wrap">
+          <div class="row"><div class="col col-80"><p><span class="my-yellow">Name: {{p.name}}<br>Climate: {{p.climate}}
+          <br>Terrain: {{p.terrain}}</span></p></div>
+          <div class="col" align="right"><button class="button button-small" ng-click="book(p)">Book</button></div>
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-content>
+</ion-view>

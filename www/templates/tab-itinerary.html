@@ -1,0 +1,39 @@
+<ion-view view-title="Itinerary">
+<ion-nav-bar class="bar-dark">
+</ion-nav-bar>
+  <ion-content class="padding bg-space" delegate-handle="bottom2">
+    <div ng-hide="showiti">
+      <ion-item class="item-text-wrap bg-transparent" align="center"><span class="my-yellow">You have no Itinerary yet.<br>
+      <br>Please chat with our friendly humanoid bot <span class="stable">Genos</span> to choose your galactic adventure<br>
+      <br>Or.. just have a chat with him anyway, if you have nothing better to do..</span>
+      </ion-item>
+    </div>
+    <div ng-show="showiti">
+      <ion-item class="item-text-wrap bg-transparent">
+        <span class="my-yellow">
+          Departure planet: <strong class="stable">Earth</strong><br>
+          <br>
+          Destination planet: <strong class="stable">{{planet.name}}</strong><br>
+          Details:<ul>
+          <li>Diameter: {{planet.diameter | number}} km</li>
+          <li>Gravity: {{planet.gravity}} G</li>
+          <li>Climate: {{planet.climate}}</li>
+          <li>Terrain: {{planet.terrain}}</li>
+          <li>Population: {{planet.population | number}}</li>
+          </ul>
+          <br>
+          Estimated distance from Earth: {{planet.distance | number}} km<br>
+          Estimated travel duration: {{planet.duration}} years<br>
+          <br>
+          Would you like to purchase a <strong class="stable">Han Solo Cover-All-Eventuality</strong> travel insurance?
+        </span>
+      </ion-item>
+      <br>
+      <ion-item class="item-text-wrap bg-transparent" align="center">
+        <span class="stable">Thank you for booking with us. You are number <span ng-if="planet.que" class="my-yellow">{{planet.que}}</span><span ng-if="!planet.que" class="my-yellow">101</span> in the queue<br>
+        <br>Our human-friendly customer service will be in touch with you shortly.
+        </span>
+      </ion-item>
+    </div>
+  </ion-content>
+</ion-view>
