@@ -1,3 +1,6 @@
+/*
+Written by Sariwati 2017
+*/
 angular.module('starter.services', [])
 
 .factory('Chats', function($http) {
@@ -48,13 +51,16 @@ angular.module('starter.services', [])
     }, {
       id: 6,
       text: 'I need a major software upgrade to be able to know the answer to that'
+    }, {
+      id: 7,
+      text: 'I need to think before I can answer that.. 💤'
     }];
   var randoms = [{
       id: 0,
-      text: 'Seriously?'
+      text: 'Are you feeling alright?'
     }, {
       id: 1,
-      text: 'What?'
+      text: 'Pardon?'
     }, {
       id: 2,
       text: 'Tell me more about yourself'
@@ -270,10 +276,14 @@ angular.module('starter.services', [])
       } else if (q.toLowerCase().startsWith('when')){
         suggestion = 2;
         return true;
+      } else if (q.toLowerCase().startsWith('do you')){
+        suggestion = 3;
+        return true;
       }
       return false;
     },
     replyQuestion: function(q) {
+      var c = 0;
       var r = Math.round(Math.random() * answers.length);
       if (r == answers.length) { r -= 1;}
       if (r == prev) {
@@ -285,6 +295,14 @@ angular.module('starter.services', [])
         return 'You will find the answer within';
       } else if (suggestion == 2) {
         return 'When hell freezes over..';
+      } else if (suggestion == 3) {
+        if (count > 0 && count % 2 == 0) {
+          count++;
+          return 'Yes, I do like green tea with milk foam. Um, sorry, what was the question again?';  
+        } else {
+          count++;
+          return 'No, I do not like nougats. Who does?';
+        }      
       } else {
         return answers[r].text;
       }
@@ -293,12 +311,17 @@ angular.module('starter.services', [])
       if (q.toLowerCase() == 'no' || q.toLowerCase().startsWith('nope') || q.toLowerCase().startsWith('not good')) {
         suggestion = 1;
         return true;
-      } else if (q.toLowerCase().startsWith('ok') || q.toLowerCase().startsWith('nice') || q.toLowerCase().startsWith('good') || q.toLowerCase().startsWith('not bad')) { 
+      } else if (q.toLowerCase().startsWith('ok') || q.toLowerCase().startsWith('nice') || q.toLowerCase().startsWith('good') || q.toLowerCase().startsWith('great')) { 
         suggestion = 2;
         return true;
       } else if (q.toLowerCase().startsWith('thank')) {
         suggestion = 3;
         return true;
+      } else if (q.toLowerCase().startsWith('lol')) {
+        suggestion = 4;
+        return true;
+      } else {
+        return false;  
       }
     },
     replyReaction: function() {
@@ -306,18 +329,20 @@ angular.module('starter.services', [])
         return 'Okay then. Do you want to change the type of holiday to something else? Relaxing, exciting or boring?';
       } else if (suggestion == 2){
         return 'Please select the planet you want to go to and click the Book button..';
-      } else {
+      } else if (suggestion == 3) {
         return 'You are welcome! It\'s a pleasure to serve you, nice human.';
+      } else {
+        return 'Ha ha ha so funny I\'m slapping my thigh';
       }
     },
     isExclaim: function(q) {
       if (q.indexOf('!') != -1) {
         return true;
-      } else if (q.indexOf('annoy') != -1) {
+      } else if (q.indexOf('annoy') != -1 || q.indexOf('uck') != -1) {
         return true;
-      } else if (q.indexOf('hate') != -1) {
+      } else if (q.indexOf('hate') != -1 || q.indexOf('dislike') != -1) {
         return true;
-      } else if (q.indexOf('really') != -1) {
+      } else if (q.indexOf('really') != -1 || q.indexOf('damn') != -1) {
         return true;
       }
       return false;

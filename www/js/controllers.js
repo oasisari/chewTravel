@@ -1,3 +1,6 @@
+/*
+Written by Sariwati 2017
+*/
 angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope, Chats, $state, $ionicScrollDelegate, $timeout) {
