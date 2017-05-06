@@ -1,26 +1,27 @@
-Ionic App Base
-=====================
+Ionic Jedi Hack - Submission
+============================
+This app is created to join the Ionic Jedi Hackster challenge in a bid to win a cool light saber :)
 
-A starting project for Ionic that optionally supports using custom SCSS.
+As per the challenge rule, this app is using Ionic CLI v3 and using the SWAPI - Star Wars API
 
-## Using this project
+global packages:
 
-We recommend using the [Ionic CLI](https://github.com/driftyco/ionic-cli) to create new Ionic projects that are based on this project but use a ready-made starter template.
+    @ionic/cli-utils : 1.0.0-rc.1
+    Cordova CLI      : 6.5.0 
+    Ionic CLI        : 3.0.0-rc.1
 
-For example, to start a new Ionic project with the default tabs interface, make sure the `ionic` utility is installed:
+local packages:
 
-```bash
-$ npm install -g ionic
-```
+    @ionic/cli-plugin-cordova : 1.0.0-rc.1
+    @ionic/cli-plugin-ionic1  : 1.0.0-rc.1
+    Ionic Framework           : ionic1 1.3.3
 
-Then run: 
+System:
 
-```bash
-$ ionic start myProject tabs
-```
+    Node       : v7.9.0
+    OS         : OS X Mavericks
+    Xcode      : Xcode 6.2 Build version 6C131e 
+    ios-deploy : not installed
+    ios-sim    : 3.1.1 
 
-More info on this can be found on the Ionic [Getting Started](http://ionicframework.com/getting-started) page and the [Ionic CLI](https://github.com/driftyco/ionic-cli) repo.
-
-## Issues
-Issues have been disabled on this repo, if you do find an issue or have a question consider posting it on the [Ionic Forum](http://forum.ionicframework.com/).  Or else if there is truly an error, follow our guidelines for [submitting an issue](http://ionicframework.com/submit-issue/) to the main Ionic repository.
-# chewTravel
+Created on 6th May 2017 by Sari
