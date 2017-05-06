@@ -10,7 +10,8 @@ angular.module('starter.services', [])
   var planets = [];
   var chosenId = -1;
   var prev = -1;
-  
+  var count = 0;
+
   var greetings = [{
       id: 0,
       text: 'Hello there!'
@@ -116,7 +117,6 @@ angular.module('starter.services', [])
       return planets[chosenId];
     },
     makeBooking: function(p) {
-      console.log('index ' + planets.indexOf(p));
       chosenId = planets.indexOf(p);
     },
     getPlanets: function() {
@@ -283,7 +283,6 @@ angular.module('starter.services', [])
       return false;
     },
     replyQuestion: function(q) {
-      var c = 0;
       var r = Math.round(Math.random() * answers.length);
       if (r == answers.length) { r -= 1;}
       if (r == prev) {
@@ -296,13 +295,12 @@ angular.module('starter.services', [])
       } else if (suggestion == 2) {
         return 'When hell freezes over..';
       } else if (suggestion == 3) {
-        if (count > 0 && count % 2 == 0) {
-          count++;
+        count++;  
+        if (count % 2 == 0) {
           return 'Yes, I do like green tea with milk foam. Um, sorry, what was the question again?';  
         } else {
-          count++;
           return 'No, I do not like nougats. Who does?';
-        }      
+        }    
       } else {
         return answers[r].text;
       }
